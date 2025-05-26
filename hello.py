@@ -37,7 +37,7 @@ SELECT CAST(price AS FLOAT) AS price,
        CAST(parking AS FLOAT) AS parking,
        prefarea,
        furnishingstatus
-FROM csv_6c9b63bc
+FROM Housing
 WHERE CAST(area AS FLOAT) > {sliderData}
 """
 filtered_df = query(sql, "Housing")
@@ -45,14 +45,14 @@ filtered_df = query(sql, "Housing")
 
 
 
-text(f"Showing {len(filtered_df)} houses with area greater than {sliderData} sq ft")
+# text(f"Showing {len(filtered_df)} houses with area greater than {sliderData} sq ft")
 table(filtered_df, title="Filtered Housing Data")
 
 text("# Choose based on which category you want differnce",size=2.0)
 opt=selectbox(label='options',default='bedrooms',options=columns)
 
 fig = px.scatter(
-        filtered_df,
+        df,
         x="area",
         y="price",
         color=opt,

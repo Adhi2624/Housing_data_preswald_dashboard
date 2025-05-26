@@ -6,12 +6,11 @@ slug = "preswald-project-357027"
 entrypoint = "hello.py"
 
 
-
 [branding]
 name = "Housing Price"
 primaryColor = "#FFFFFF"
 
-[datasources.Housing]
+[data.Housing]
 type = "csv"
 path = "data/Housing.csv"
 
