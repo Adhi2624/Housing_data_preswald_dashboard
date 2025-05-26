@@ -52,7 +52,7 @@ text("# Choose based on which category you want differnce",size=2.0)
 opt=selectbox(label='options',default='bedrooms',options=columns)
 
 fig = px.scatter(
-        df,
+        filtered_df,
         x="area",
         y="price",
         color=opt,
